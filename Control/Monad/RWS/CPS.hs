@@ -26,7 +26,8 @@ import Control.Monad.Trans as X
 import Data.Monoid as X
 
 import Control.Monad.Trans.RWS.CPS hiding (censor, tell, writer, listen, pass, ask,
-                                           local, reader, get, put, state, listens, asks)
+                                           local, reader, get, put, state, listens,
+                                           asks, modify, gets)
 import qualified Control.Monad.Trans.RWS.CPS as CPS
 
 -- Orphan instance
