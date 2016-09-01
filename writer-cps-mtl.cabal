@@ -8,7 +8,7 @@ cabal-version:  >= 1.10
 license:        MIT
 license-file:   LICENSE
 tested-with:    GHC == 7.0.4, GHC == 7.2.2, GHC == 7.4.2, GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3, GHC == 8.0.1
-author:         Daniel Mendler
+author:         Andy Gill, Edward Kmett, Daniel Mendler
 maintainer:     mail@daniel-mendler.de
 copyright:      2016 Daniel Mendler
 category:       Control
@@ -26,7 +26,7 @@ library
   hs-source-dirs:
       .
   default-extensions: MultiParamTypeClasses FunctionalDependencies FlexibleInstances
-  ghc-options: -Wall -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wtabs
+  ghc-options: -Wall
   build-depends:
       base < 6
     , transformers >= 0.4 && < 0.6

@@ -19,10 +19,6 @@ default-extensions:
 
 ghc-options:
 - -Wall
-- -Widentities
-- -Wincomplete-uni-patterns
-- -Wincomplete-record-updates
-- -Wtabs
 
 dependencies:
 - base < 6
