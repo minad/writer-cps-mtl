@@ -4,8 +4,8 @@ synopsis: MonadWriter orphan instances for writer-cps-transformers
 description:
   The WriterT and RWST monad transformers provided by writer-cps-transformers
   are written in continuation passing style and avoid the space-leak
-  problem of the traditional Control.Monad.Trans.Writer.Strict/Lazy.
-  See also (<https://hackage.haskell.org/package/writer-cps-transformers>).
+  problem of the traditional Control.Monad.Trans.Writer.Strict and Control.Monad.Trans.Writer.Lazy.
+  See also (<http://hackage.haskell.org/package/writer-cps-transformers>).
 category: Control
 author: Andy Gill, Edward Kmett, Daniel Mendler
 maintainer: mail@daniel-mendler.de
