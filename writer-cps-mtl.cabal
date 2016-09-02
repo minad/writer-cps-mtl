@@ -5,7 +5,7 @@
 name:           writer-cps-mtl
 version:        0.1.0.1
 cabal-version:  >= 1.10
-license:        MIT
+license:        BSD3
 license-file:   LICENSE
 tested-with:    GHC == 7.0.4, GHC == 7.2.2, GHC == 7.4.2, GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3, GHC == 8.0.1
 author:         Andy Gill, Edward Kmett, Daniel Mendler
@@ -31,7 +31,7 @@ library
       base < 6
     , transformers >= 0.4 && < 0.6
     , mtl >= 2.2 && < 2.4
-    , writer-cps-transformers == 0.1.0.1
+    , writer-cps-transformers >= 0.1 && < 0.3
   exposed-modules:
       Control.Monad.RWS.CPS
       Control.Monad.Writer.CPS

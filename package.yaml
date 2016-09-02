@@ -9,7 +9,7 @@ category: Control
 author: Andy Gill, Edward Kmett, Daniel Mendler
 maintainer: mail@daniel-mendler.de
 copyright: 2016 Daniel Mendler
-license: MIT
+license: BSD3
 github: minad/writer-cps-mtl
 
 default-extensions:
@@ -24,7 +24,7 @@ dependencies:
 - base < 6
 - transformers >= 0.4 && < 0.6
 - mtl >= 2.2 && < 2.4
-- writer-cps-transformers == 0.1.0.1
+- writer-cps-transformers >= 0.1 && < 0.3
 
 tested-with:
   GHC == 7.0.4,
