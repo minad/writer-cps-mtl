@@ -36,7 +36,6 @@ module Control.Monad.RWS.CPS (
   execRWST,
   mapRWST,
   withRWST,
-  -- * Strict Reader-writer-state monads
   module X
 ) where
 
