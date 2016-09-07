@@ -45,15 +45,13 @@ import Control.Monad.RWS.Class as X
 import Control.Monad.Trans as X
 import Data.Monoid as X
 
-import Control.Monad.Trans.RWS.CPS hiding (censor, tell, writer, listen, pass, ask,
-                                           local, reader, get, put, state, listens,
-                                           asks, modify, gets)
+import Control.Monad.Trans.RWS.CPS
 import qualified Control.Monad.Trans.RWS.CPS as CPS
 
 -- Orphan instance
 instance (Monoid w, Monad m) => MonadWriter w (RWST r w s m) where
-  tell = CPS.tell
   writer = CPS.writer
+  tell = CPS.tell
   listen = CPS.listen
   pass = CPS.pass
 

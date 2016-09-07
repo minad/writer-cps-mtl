@@ -40,11 +40,12 @@ import Control.Monad.Trans as X
 import Control.Monad.Writer.Class as X
 import Data.Monoid as X
 
-import Control.Monad.Trans.Writer.CPS hiding (writer, listen, pass)
+import Control.Monad.Trans.Writer.CPS
 import qualified Control.Monad.Trans.Writer.CPS as CPS
 
 -- Orphan instance
-instance (Monoid w, Monad m) => MonadWriter w (CPS.WriterT w m) where
+instance (Monoid w, Monad m) => MonadWriter w (WriterT w m) where
   writer = CPS.writer
+  tell = CPS.tell
   listen = CPS.listen
   pass = CPS.pass
