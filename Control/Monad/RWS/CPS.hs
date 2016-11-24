@@ -1,4 +1,7 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE UndecidableInstances #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Control.Monad.RWS.CPS
@@ -45,24 +48,32 @@ import Control.Monad.RWS.Class as X
 import Control.Monad.Trans as X
 import Data.Monoid as X
 
+import Control.Monad.Cont.Class
+import Control.Monad.Error.Class
 import Control.Monad.Trans.RWS.CPS
 import qualified Control.Monad.Trans.RWS.CPS as CPS
 
--- Orphan instance
+-- Orphan instances
+
 instance (Monoid w, Monad m) => MonadWriter w (RWST r w s m) where
   writer = CPS.writer
   tell = CPS.tell
   listen = CPS.listen
   pass = CPS.pass
 
--- Orphan instance
 instance Monad m => MonadReader r (RWST r w s m) where
   ask = CPS.ask
   local = CPS.local
   reader = CPS.reader
 
--- Orphan instance
 instance Monad m => MonadState s (RWST r w s m) where
   get = CPS.get
   put = CPS.put
   state = CPS.state
+
+instance MonadError e m => MonadError e (RWST r w s m) where
+  throwError = lift . throwError
+  catchError = CPS.liftCatch catchError
+
+instance MonadCont m => MonadCont (RWST r w s m) where
+  callCC = CPS.liftCallCC callCC

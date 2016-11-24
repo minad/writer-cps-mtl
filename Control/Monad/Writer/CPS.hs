@@ -1,4 +1,7 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE UndecidableInstances #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Control.Monad.Writer.CPS
@@ -40,12 +43,22 @@ import Control.Monad.Trans as X
 import Control.Monad.Writer.Class as X
 import Data.Monoid as X
 
+import Control.Monad.Cont.Class
+import Control.Monad.Error.Class
 import Control.Monad.Trans.Writer.CPS
 import qualified Control.Monad.Trans.Writer.CPS as CPS
 
--- Orphan instance
+-- Orphan instances
+
 instance (Monoid w, Monad m) => MonadWriter w (WriterT w m) where
   writer = CPS.writer
   tell = CPS.tell
   listen = CPS.listen
   pass = CPS.pass
+
+instance MonadError e m => MonadError e (WriterT w m) where
+  throwError = lift . throwError
+  catchError = CPS.liftCatch catchError
+
+instance MonadCont m => MonadCont (WriterT w m) where
+  callCC = CPS.liftCallCC callCC

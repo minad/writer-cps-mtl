@@ -13,11 +13,6 @@ copyright: 2016 Daniel Mendler
 license: BSD3
 github: minad/writer-cps-mtl
 
-default-extensions:
-- MultiParamTypeClasses
-- FunctionalDependencies
-- FlexibleInstances
-
 ghc-options:
 - -Wall
 
