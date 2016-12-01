@@ -32,4 +32,4 @@ tested-with:
   GHC == 8.0.1
 
 library:
-  source-dirs: .
+  source-dirs: src
