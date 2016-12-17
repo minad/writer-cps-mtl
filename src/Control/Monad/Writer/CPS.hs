@@ -43,6 +43,8 @@ import Control.Monad.Trans as X
 import Control.Monad.Writer.Class as X
 import Data.Monoid as X
 
+import Control.Monad.State.Class
+import Control.Monad.Reader.Class
 import Control.Monad.Cont.Class
 import Control.Monad.Error.Class
 import Control.Monad.Trans.Writer.CPS
@@ -50,7 +52,7 @@ import qualified Control.Monad.Trans.Writer.CPS as CPS
 
 -- Orphan instances
 
-instance (Monoid w, Monad m) => MonadWriter w (WriterT w m) where
+instance (Monad m, Monoid w) => MonadWriter w (WriterT w m) where
   writer = CPS.writer
   tell = CPS.tell
   listen = CPS.listen
@@ -62,3 +64,13 @@ instance MonadError e m => MonadError e (WriterT w m) where
 
 instance MonadCont m => MonadCont (WriterT w m) where
   callCC = CPS.liftCallCC callCC
+
+instance (MonadReader r m, Monoid w) => MonadReader r (WriterT w m) where
+  ask    = lift ask
+  local  = CPS.mapWriterT . local
+  reader = lift . reader
+
+instance MonadState s m => MonadState s (WriterT w m) where
+  get = lift get
+  put = lift . put
+  state = lift . state
