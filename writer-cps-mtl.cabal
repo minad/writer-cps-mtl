@@ -3,7 +3,7 @@
 -- see: https://github.com/sol/hpack
 
 name:           writer-cps-mtl
-version:        0.1.1.1
+version:        0.1.1.2
 cabal-version:  >= 1.10
 license:        BSD3
 license-file:   LICENSE
@@ -30,7 +30,7 @@ library
       base < 6
     , transformers >= 0.4 && < 0.6
     , mtl >= 2.2 && < 2.4
-    , writer-cps-transformers >= 0.1.1 && < 0.3
+    , writer-cps-transformers >= 0.1.1.1 && < 0.3
   exposed-modules:
       Control.Monad.RWS.CPS
       Control.Monad.Writer.CPS
