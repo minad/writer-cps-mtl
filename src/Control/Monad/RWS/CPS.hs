@@ -72,6 +72,8 @@ instance Monad m => MonadState s (RWST r w s m) where
   put = CPS.put
   state = CPS.state
 
+instance (Monad m, Monoid w) => MonadRWS r w s (RWST r w s m)
+
 instance MonadError e m => MonadError e (RWST r w s m) where
   throwError = lift . throwError
   catchError = CPS.liftCatch catchError
