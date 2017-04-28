@@ -35,3 +35,18 @@ library
       Control.Monad.RWS.CPS
       Control.Monad.Writer.CPS
   default-language: Haskell2010
+
+test-suite regression
+  type: exitcode-stdio-1.0
+  ghc-options: -Wall
+  build-depends:
+      base < 6
+    , transformers >= 0.4 && < 0.6
+    , mtl >= 2.2 && < 2.4
+    , writer-cps-transformers >= 0.1.1.1 && < 0.3
+    , writer-cps-mtl
+    , tasty
+    , tasty-hunit
+  main-is:
+      Test.hs
+  default-language: Haskell2010

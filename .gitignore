@@ -3,3 +3,5 @@ attic
 .hpc
 .stack*
 stack.yaml
+.cabal-sandbox
+cabal.sandbox.config
