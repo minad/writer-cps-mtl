@@ -79,4 +79,4 @@ instance MonadError e m => MonadError e (RWST r w s m) where
   catchError = CPS.liftCatch catchError
 
 instance MonadCont m => MonadCont (RWST r w s m) where
-  callCC = CPS.liftCallCC callCC
+  callCC = CPS.liftCallCC' callCC
