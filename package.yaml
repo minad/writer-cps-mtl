@@ -1,5 +1,5 @@
 name: writer-cps-mtl
-version: 0.1.1.4
+version: 0.1.1.5
 synopsis: MonadWriter orphan instances for writer-cps-transformers
 description:
   The WriterT and RWST monad transformers provided by writer-cps-transformers

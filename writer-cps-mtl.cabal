@@ -2,10 +2,10 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6746e1a562b9717c4dcdd28d6d6cca5e2811a1bb6abed5e7ab6efd8f51534cda
+-- hash: b3bd3e4e6f47cbac4fbf425d97f896e0f497188fb907f46e384389c4d0e4dd51
 
 name:           writer-cps-mtl
-version:        0.1.1.4
+version:        0.1.1.5
 cabal-version:  >= 1.10
 license:        BSD3
 license-file:   LICENSE
