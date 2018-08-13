@@ -2,14 +2,14 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 69cc89a14794bc4631dbe530aba5549fa629a188c43fac086a94e6c6b5ee9ac4
+-- hash: 6746e1a562b9717c4dcdd28d6d6cca5e2811a1bb6abed5e7ab6efd8f51534cda
 
 name:           writer-cps-mtl
 version:        0.1.1.4
 cabal-version:  >= 1.10
 license:        BSD3
 license-file:   LICENSE
-tested-with:    GHC == 7.0.4, GHC == 7.2.2, GHC == 7.4.2, GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3, GHC == 8.0.1, GHC == 8.2.1, GHC == 8.4.3, GHC == 8.6.1
+tested-with:    GHC == 7.10.3, GHC == 8.0.1, GHC == 8.2.1, GHC == 8.4.3, GHC == 8.6.1
 author:         Andy Gill, Edward Kmett, Daniel Mendler
 maintainer:     mail@daniel-mendler.de
 copyright:      2016 Daniel Mendler
