@@ -1,5 +1,5 @@
 name: writer-cps-mtl
-version: 0.1.1.5
+version: 0.1.1.6
 synopsis: MonadWriter orphan instances for writer-cps-transformers
 description:
   The WriterT and RWST monad transformers provided by writer-cps-transformers
@@ -20,7 +20,7 @@ dependencies:
 - base < 6
 - transformers >= 0.4 && < 0.6
 - mtl >= 2.2 && < 2.4
-- writer-cps-transformers >= 0.1.1.1 && < 0.3
+- writer-cps-transformers >= 0.1.1.1 && < 0.6
 
 tested-with:
   GHC == 7.10.3,

@@ -1,12 +1,13 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b3bd3e4e6f47cbac4fbf425d97f896e0f497188fb907f46e384389c4d0e4dd51
+-- hash: 522a344e5b14c30ac172bd9ebb6ea7c7e3f1d5ebcd889f7326611c19eaf9c565
 
 name:           writer-cps-mtl
-version:        0.1.1.5
-cabal-version:  >= 1.10
+version:        0.1.1.6
 license:        BSD3
 license-file:   LICENSE
 tested-with:    GHC == 7.10.3, GHC == 8.0.1, GHC == 8.2.1, GHC == 8.4.3, GHC == 8.6.1
@@ -32,7 +33,7 @@ library
       base <6
     , mtl >=2.2 && <2.4
     , transformers >=0.4 && <0.6
-    , writer-cps-transformers >=0.1.1.1 && <0.3
+    , writer-cps-transformers >=0.1.1.1 && <0.6
   exposed-modules:
       Control.Monad.RWS.CPS
       Control.Monad.Writer.CPS
