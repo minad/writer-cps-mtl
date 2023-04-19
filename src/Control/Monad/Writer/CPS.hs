@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE UndecidableInstances #-}
@@ -51,6 +52,7 @@ import Control.Monad.Error.Class
 import Control.Monad.Trans.Writer.CPS
 import qualified Control.Monad.Trans.Writer.CPS as CPS
 
+#if !MIN_VERSION_mtl(2,3,0)
 -- Orphan instances
 
 instance (Monad m, Monoid w) => MonadWriter w (WriterT w m) where
@@ -75,3 +77,4 @@ instance MonadState s m => MonadState s (WriterT w m) where
   get = lift get
   put = lift . put
   state = lift . state
+#endif

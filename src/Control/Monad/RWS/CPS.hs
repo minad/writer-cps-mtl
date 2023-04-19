@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE UndecidableInstances #-}
@@ -54,6 +55,7 @@ import Control.Monad.Error.Class
 import Control.Monad.Trans.RWS.CPS
 import qualified Control.Monad.Trans.RWS.CPS as CPS
 
+#if !MIN_VERSION_mtl(2,3,0)
 -- Orphan instances
 
 instance (Monoid w, Monad m) => MonadWriter w (RWST r w s m) where
@@ -80,3 +82,4 @@ instance MonadError e m => MonadError e (RWST r w s m) where
 
 instance MonadCont m => MonadCont (RWST r w s m) where
   callCC = CPS.liftCallCC' callCC
+#endif
